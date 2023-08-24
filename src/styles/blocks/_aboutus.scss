@@ -1,0 +1,11 @@
+.aboutus{
+  padding: 25px 0;
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__text{
+    line-height: 130%;
+  }
+}

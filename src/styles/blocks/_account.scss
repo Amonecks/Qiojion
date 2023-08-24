@@ -1,0 +1,13 @@
+.account{
+  padding: 25px 0;
+  &__wrapper{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 5%;
+    @include md{
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

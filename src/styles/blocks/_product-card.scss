@@ -1,0 +1,95 @@
+.product-card{
+  background: $clraliceblue;
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s all;
+  display: flex;
+  flex-direction: column;
+  @include xl{
+    border-radius: 8px;
+  }
+  &:hover{
+    box-shadow: 3px 3px 8px $clrblack;
+  }
+  &__preview{
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    @include lg{
+      height: 280px;
+      flex-shrink: 0;
+    }
+    @include xl{
+      height: 45vw;
+      padding: 8px;
+    }
+    @include xs{
+      height: 60vw;
+    }
+  }
+  &__img{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  &__main{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: start;
+    height: 100%;
+    @include xl{
+      gap: 12px;
+      padding: 8px;
+    }
+  }
+  &__title{
+    font-size: 24px;
+    font-weight: 600;
+    color: $clrblack;
+    transition: 0.3s all;
+    @include md{
+      font-size: 20px;
+    }
+    @include xl{
+      font-size: 18px;
+    }
+    &:hover{
+      color: $clrred;
+    }
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+    width: 100%;
+  }
+  &__price{
+    font-size: 20px;
+    font-weight: 700;
+    @include md{
+      font-size: 18px;
+    }
+    @include xl{
+      font-size: 16px;
+    }
+  }
+  &__btns{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+    @include md{
+      gap: 8px;
+    }
+    .btn{
+      flex: 1 1 150px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.footer{
+  padding: 25px 0;
+  background: $clrblack;
+  &__main{
+    padding: 0 0 25px 0;
+  }
+  &__bottom{
+    padding: 25px 0 0 0;
+    border-top: 1px solid $clraliceblue;
+    &-title{
+      font-size: 18px;
+      color: $clraliceblue;
+    }
+  }
+  &__logo{
+    font-size: 44px;
+    font-weight: 600;
+    color: $clrred;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s all;
+    @include md{
+      font-size: 44px;
+    }
+    span{
+      font-size: 56px;
+      font-weight: 600;
+      color: $clrwhite;
+      transition: 0.3s all;
+      @include md{
+        font-size: 46px;
+      }
+    }
+    &:hover{
+      color: $clrwhite;
+      span{
+        color: $clrred;
+      }
+    }
+  }
+}

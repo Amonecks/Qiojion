@@ -1,0 +1,54 @@
+.overlay{
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: rgba($color: $clrblack, $alpha: .4);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  display: none;
+  top: 0;
+  z-index: 5;
+  &.active{
+    display: flex;
+  }
+}
+
+.popup{
+  padding: 36px;
+  background: $clrwhite;
+  border-radius: 12px;
+  position: relative;
+  max-width: 500px;
+  
+  @include md{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    overflow: scroll;
+  }
+  &__close{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    div{
+      display: flex;
+    }
+    svg{
+      transition: 0.3s all;
+      width: 16px;
+    }
+    &:hover{
+      svg{
+        fill: $clrred;
+      }
+    }
+  }
+  &__title{
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+  }
+}

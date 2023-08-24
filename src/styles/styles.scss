@@ -1,0 +1,89 @@
+@import 'base/mixins';
+@import 'base/variables';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/search';
+@import 'blocks/products';
+@import 'blocks/product-card';
+@import 'blocks/btns';
+@import 'blocks/error';
+@import 'blocks/product';
+@import 'blocks/favorites';
+@import 'blocks/aboutus';
+@import 'blocks/cart';
+@import 'blocks/counter';
+@import 'blocks/contacts';
+@import 'blocks/registration';
+@import 'blocks/popup';
+@import 'blocks/login';
+@import 'blocks/account';
+@import 'blocks/orders';
+@import 'blocks/profile';
+@import 'blocks/order';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  list-style-type: none;
+  text-decoration: none;
+  outline: none;
+  background: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  @include xl{
+    font-size: 14px;
+  }
+}
+
+.container{
+  width: 1280px;
+  margin: 0 auto;
+  @include sg{
+    width: 100%;
+    padding: 0 20px;
+  }
+  @include md{
+    padding: 0 12px;
+  }
+}
+
+.main{
+  min-height: calc(100vh - 375px);
+  @include md{
+    min-height: calc(100vh - 165px);
+    padding: 80px 0 0 0;
+  }
+}
+
+.title{
+  font-size: 34px;
+  font-weight: 600;
+  &_tac{
+    text-align: center;
+  }
+  &_cs{
+    padding: 25px 0;
+  }
+  @include md{
+    font-size: 24px;
+  }
+}
+
+.subtitle{
+  padding: 25px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  &_tac{
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.err{
+  color: $clrred;
+}

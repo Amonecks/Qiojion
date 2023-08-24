@@ -1,0 +1,20 @@
+.profile{
+  padding: 24px;
+  width: 30%;
+  border-radius: 12px;
+  background: $clraliceblue;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include md{
+    width: 100%;
+  }
+  &__name{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__email{
+    text-decoration-style: 22px;
+    font-weight: 700;
+  }
+}

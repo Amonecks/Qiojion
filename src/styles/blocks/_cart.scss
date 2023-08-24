@@ -1,0 +1,158 @@
+.cart{
+  padding: 25px 0;
+  &__products{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include lg{
+      width: calc(70% - 20px);
+    }
+    @include md{
+      width: 100%;
+    }
+  }
+  &__wrapper{
+    padding: 25px 0;
+    display: flex;
+    align-items: start;
+    gap: 40px;
+    justify-content: space-between;
+    @include lg{
+      gap: 20px;
+    }
+    @include md{
+      flex-direction: column;
+    }
+  }
+  &__order{
+    padding: 12px;
+    border-radius: 12px;
+    background: $clraliceblue;
+    width: calc(40% - 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include lg{
+      width: 30%;
+    }
+    @include md{
+      width: 100%;
+    }
+    a{
+      width: 100%;
+      padding: 12px 24px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid $clrblack;
+      color: $clrblack;
+      transition: 0.3s all;
+      &:hover{
+        border: 1px solid $clrred;
+        color: $clrred;
+      }
+    }
+  }
+  &__total{
+    font-size: 24px;
+    span{
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+  &__product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 24px 12px 12px;
+    background: $clraliceblue;
+    border-radius: 12px;
+    @include lg{
+      flex-direction: column;
+      gap: 12px;
+      align-items: start;
+    }
+    @include md{
+      position: relative;
+      flex-direction: row;
+      padding: 24px;
+      gap: 24px;
+      align-items: center;
+    }
+    @include xl{
+      flex-direction: column;
+      gap: 12px;
+    }
+    &-wrapper{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      @include md{
+        align-items: center;
+      }
+      @include xs{
+        flex-direction: column;
+      }
+    }
+    &-info{
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @include xs{
+        align-items: center;
+        gap: 12px;
+      }
+    }
+    &-title{
+      font-weight: 600;
+      color: $clrblack;
+      font-size: 20px;
+      transition: 0.3s all;
+      &:hover{
+        color: $clrred;
+      }
+    }
+    &-price{
+      font-weight: 700;
+      font-size: 22px;
+    }
+    &-remove{
+      padding: 12px;
+      background: $clrblack;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s all;
+      @include md{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+      svg{
+        fill: $clrwhite;
+      }
+      div{
+        display: flex;
+      }
+      &:hover{
+        background: $clrred;
+      }
+    }
+    &-preview{
+      height: 150px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include md{
+        height: 200px;
+        width: 200px;
+      }
+      img{
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+      }
+    }
+  }
+}
