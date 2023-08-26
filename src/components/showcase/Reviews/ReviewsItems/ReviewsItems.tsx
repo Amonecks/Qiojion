@@ -23,7 +23,7 @@ const ReviewsItems: React.FC<ReviewsProps> = ({ reviews }): JSX.Element => {
                     {name}
                   </div>
                   <div className="product__reviews-item-date">
-                    {date}
+                    {date.slice(0, 10)}
                   </div>
                 </div>
 

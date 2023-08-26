@@ -51,6 +51,12 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        @include xl{
+          justify-content: space-between;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
       }
       &-name{
         font-weight: 600;
@@ -62,6 +68,10 @@
         justify-content: space-between;
         border-bottom: 1px solid rgba($color: $clrblack, $alpha: .4);
         padding: 0 0 24px 0;
+        @include xl{
+          flex-wrap: wrap;
+          gap: 12px;
+        }
       }
     }
   }

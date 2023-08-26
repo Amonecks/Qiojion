@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { authRoutes, publicRoutes, notAuthRoutes } from "../../../routes/routesConfig";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 const App: React.FC = (): JSX.Element => {
 
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
 
   const isAuth = useAuth();
 
@@ -33,6 +34,12 @@ const App: React.FC = (): JSX.Element => {
     }
 
   }, [dispatch]);
+
+  useEffect(() => {
+
+    window.scrollTo(0, 0);
+
+  }, [pathname]);
 
   return (
     <>
