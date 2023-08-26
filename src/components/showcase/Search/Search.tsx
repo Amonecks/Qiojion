@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import SearchCards from './SearchCards/SearchCards';
+import { API_URL } from '../../../constants/constants';
 
 const Search: React.FC = (): JSX.Element => {
 
@@ -21,7 +22,7 @@ const Search: React.FC = (): JSX.Element => {
 
       axios({
         method: 'GET',
-        url: `http://localhost:3000/search`,
+        url: `${API_URL}/search`,
         params: {
           search: searchValue
         }
