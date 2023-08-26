@@ -3,7 +3,11 @@ import axios from 'axios';
 import SearchCards from './SearchCards/SearchCards';
 import { API_URL } from '../../../constants/constants';
 
-const Search: React.FC = (): JSX.Element => {
+interface ISearchProps {
+  setIsActiveMmenu: (a: boolean) => void
+}
+
+const Search: React.FC<ISearchProps> = ({ setIsActiveMmenu }): JSX.Element => {
 
   const [searchValue, setSearchValue] = useState<string>('');
   const [isActive, setIsActive] = useState(false);
@@ -64,7 +68,7 @@ const Search: React.FC = (): JSX.Element => {
           value={searchValue}
         />
 
-        {searchedProducts && <SearchCards active={isActive} products={searchedProducts} />}
+        {searchedProducts && <SearchCards setIsActiveMmenu={setIsActiveMmenu} active={isActive} products={searchedProducts} />}
 
       </div>
 

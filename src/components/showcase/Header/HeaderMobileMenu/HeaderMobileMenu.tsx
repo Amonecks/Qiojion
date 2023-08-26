@@ -16,7 +16,7 @@ const HeaderMobileMenu: React.FC<IHeaderMobileMenuProps> = ({ isActive, setIsAct
       
       <div className={`header__mmenu ${isActive ? 'header__mmenu_active' : ''}`}>
 
-        <Search />
+        <Search setIsActiveMmenu={setIsActive}/>
 
         <HeaderAccount setIsActive={setIsActive} />
 
