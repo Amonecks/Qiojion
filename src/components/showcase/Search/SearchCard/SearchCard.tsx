@@ -10,6 +10,10 @@ interface ISearchCardProps {
 
 const SearchCard: React.FC<ISearchCardProps> = ({ id, title, price, imgs, setIsActive }): JSX.Element => {
 
+  const CloseMobileMenuHandle = () => {
+    if(setIsActive) setIsActive(false);
+  }
+
   return (
 
     <>
@@ -22,7 +26,7 @@ const SearchCard: React.FC<ISearchCardProps> = ({ id, title, price, imgs, setIsA
 
         <div className="search__item-wrapper">
 
-          <NavLink onClick={() => setIsActive(false)} className="search__item-title" to={`product?id=${id}`}>{title}</NavLink>
+          <NavLink onClick={CloseMobileMenuHandle} className="search__item-title" to={`product?id=${id}`}>{title}</NavLink>
 
           <div className="search__item-price">{price}</div>
 

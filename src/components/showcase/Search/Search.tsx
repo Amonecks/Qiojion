@@ -4,7 +4,7 @@ import SearchCards from './SearchCards/SearchCards';
 import { API_URL } from '../../../constants/constants';
 
 interface ISearchProps {
-  setIsActiveMmenu: (a: boolean) => void
+  setIsActiveMmenu?: (a: boolean) => void
 }
 
 const Search: React.FC<ISearchProps> = ({ setIsActiveMmenu }): JSX.Element => {
