@@ -6,6 +6,10 @@
 
 https://qiojion.ru
 
+## Backend
+
+Backend так же написан мной на express.js
+
 ## Стек
 
 * React
