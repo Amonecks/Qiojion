@@ -112,7 +112,7 @@ const LoginPage: React.FC = (): JSX.Element => {
                 version="btn_v2"
               >Войти</Button>
 
-              {error.status ? <div className="err">{error.title}</div> : ''}
+              <div className="err">{error.status && error.title}</div>
               
             </Form>
 

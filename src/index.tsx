@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/showcase/App/App.tsx';
 import { BrowserRouter } from 'react-router-dom';
