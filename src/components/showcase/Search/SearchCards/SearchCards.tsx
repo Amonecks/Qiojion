@@ -4,10 +4,9 @@ import { ProductCardType } from "../../../../types/types";
 interface ISearchCardsProps {
   products: ProductCardType[];
   active: boolean;
-  setIsActiveMmenu?: (a: boolean) => void;
 }
 
-const SearchCards: React.FC<ISearchCardsProps> = ({ products, active, setIsActiveMmenu }): JSX.Element => {
+const SearchCards: React.FC<ISearchCardsProps> = ({ products, active }): JSX.Element => {
 
   return (
 
@@ -24,7 +23,6 @@ const SearchCards: React.FC<ISearchCardsProps> = ({ products, active, setIsActiv
               imgs={imgs}
               price={price}
               key={index}
-              setIsActive={setIsActiveMmenu}
             />
           ))
 

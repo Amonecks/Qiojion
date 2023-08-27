@@ -4,25 +4,24 @@ import HeaderLinks from "../HeaderLinks/HeaderLinks";
 import HeaderNav from "../HeaderNav/HeaderNav";
 
 interface IHeaderMobileMenuProps {
-  isActive: boolean;
-  setIsActive: (a: boolean) => void;
+  isMobileMenuVisible: boolean;
 }
 
-const HeaderMobileMenu: React.FC<IHeaderMobileMenuProps> = ({ isActive, setIsActive }): JSX.Element => {
+const HeaderMobileMenu: React.FC<IHeaderMobileMenuProps> = ({ isMobileMenuVisible }): JSX.Element => {
 
   return (
 
     <>
       
-      <div className={`header__mmenu ${isActive ? 'header__mmenu_active' : ''}`}>
+      <div className={`header__mmenu ${isMobileMenuVisible ? 'header__mmenu_active' : ''}`}>
 
-        <Search setIsActiveMmenu={setIsActive}/>
+        <Search />
 
-        <HeaderAccount setIsActive={setIsActive} />
+        <HeaderAccount />
 
-        <HeaderLinks setIsActive={setIsActive} />
+        <HeaderLinks />
 
-        <HeaderNav setIsActive={setIsActive} />
+        <HeaderNav />
         
       </div>
 

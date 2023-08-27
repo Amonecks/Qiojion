@@ -2,17 +2,12 @@ import { NavLink } from "react-router-dom";
 
 interface ISearchCardProps {
   id: string;
-  setIsActive?: (a: boolean) => void;
   title: string;
   price: number;
   imgs: string[];
 }
 
-const SearchCard: React.FC<ISearchCardProps> = ({ id, title, price, imgs, setIsActive }): JSX.Element => {
-
-  const CloseMobileMenuHandle = () => {
-    if(setIsActive) setIsActive(false);
-  }
+const SearchCard: React.FC<ISearchCardProps> = ({ id, title, price, imgs }): JSX.Element => {
 
   return (
 
@@ -26,7 +21,7 @@ const SearchCard: React.FC<ISearchCardProps> = ({ id, title, price, imgs, setIsA
 
         <div className="search__item-wrapper">
 
-          <NavLink onClick={CloseMobileMenuHandle} className="search__item-title" to={`product?id=${id}`}>{title}</NavLink>
+          <NavLink className="search__item-title" to={`product?id=${id}`}>{title}</NavLink>
 
           <div className="search__item-price">{price}</div>
 

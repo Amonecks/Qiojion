@@ -1,14 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-interface IHeaderNavProps {
-  setIsActive?: (a: boolean) => void;
-}
-
-const HeaderNav: React.FC<IHeaderNavProps> = ({ setIsActive }): JSX.Element => {
-
-  const CloseMobileMenuHandle = () => {
-    if(setIsActive) setIsActive(false);
-  }
+const HeaderNav: React.FC = (): JSX.Element => {
 
   const navItems = [
     {
@@ -35,7 +27,7 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({ setIsActive }): JSX.Element => {
             navItems.map(({title, path}, index) => {
               return (
                 <li key={index} className="header__nav-item">
-                  <NavLink onClick={CloseMobileMenuHandle} to={path} className="header__nav-link">{title}</NavLink>
+                  <NavLink to={path} className="header__nav-link">{title}</NavLink>
                 </li>
               )
             })

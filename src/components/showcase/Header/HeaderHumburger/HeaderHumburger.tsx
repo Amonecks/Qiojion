@@ -1,15 +1,15 @@
 type HeaderHumburgerProps = {
-  isActive: boolean,
-  setIsActive: (a: boolean) => void
+  isMobileMenuVisible: boolean,
+  setMobileMenuVisibility: (a: boolean) => void;
 }
 
-const HeaderHumburger: React.FC<HeaderHumburgerProps> = ({ isActive, setIsActive }): JSX.Element => {
+const HeaderHumburger: React.FC<HeaderHumburgerProps> = ({ isMobileMenuVisible, setMobileMenuVisibility }): JSX.Element => {
 
   return (
 
     <>
     
-      <div onClick={() => setIsActive(!isActive)} className={`header__humburger ${isActive ? "header__humburger_active" : ""}`} >
+      <div onClick={() => setMobileMenuVisibility(!isMobileMenuVisible)} className={`header__humburger ${isMobileMenuVisible ? "header__humburger_active" : ""}`} >
         <div className="header__humburger-line"></div>
         <div className="header__humburger-line"></div>
         <div className="header__humburger-line"></div>

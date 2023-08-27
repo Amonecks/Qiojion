@@ -6,12 +6,13 @@ import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import { API_URL } from "../../../constants/constants";
 import { login } from "../../../store/slices/profileSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 const App: React.FC = (): JSX.Element => {
 
   const dispatch = useDispatch();
+  const [isMobileMenuVisible, setMobileMenuVisibility] = useState(false);
   const { pathname } = useLocation();
 
   const isAuth = useAuth();
@@ -38,13 +39,14 @@ const App: React.FC = (): JSX.Element => {
   useEffect(() => {
 
     window.scrollTo(0, 0);
+    setMobileMenuVisibility(false);
 
   }, [pathname]);
 
   return (
     <>
 
-      <Header />
+      <Header isMobileMenuVisible={isMobileMenuVisible} setMobileMenuVisibility={setMobileMenuVisibility} />
 
       <main className="main">
 

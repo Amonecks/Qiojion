@@ -3,19 +3,11 @@ import useAuth from "../../../../hooks/useAuth";
 import { useSelector } from "react-redux";
 import { StateType } from "../../../../types/types";
 
-interface IHeaderAccountProps {
-  setIsActive?: (a: boolean) => void;
-}
-
-const HeaderAccount: React.FC<IHeaderAccountProps> = ({ setIsActive }): JSX.Element => {
+const HeaderAccount: React.FC = (): JSX.Element => {
 
   const isAuth = useAuth();
 
   const fullname = useSelector((state: StateType) => state.profileSlice.name + ' ' + state.profileSlice.surname);
-
-  const CloseMobileMenuHandle = () => {
-    if(setIsActive) setIsActive(false);
-  }
 
   return (
     <>
@@ -24,13 +16,13 @@ const HeaderAccount: React.FC<IHeaderAccountProps> = ({ setIsActive }): JSX.Elem
 
         {
           isAuth ?
-            <NavLink onClick={CloseMobileMenuHandle} to="/account">
+            <NavLink to="/account">
               <div className="header__account-name">{fullname ? fullname : ''}</div>
             </NavLink>
             : 
             <>
-              <NavLink onClick={CloseMobileMenuHandle} to="/registration">Регистрация</NavLink>
-              <NavLink onClick={CloseMobileMenuHandle} to="/login">Войти</NavLink>
+              <NavLink to="/registration">Регистрация</NavLink>
+              <NavLink to="/login">Войти</NavLink>
             </>
         }
 

@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { useState } from 'react';
 import HeaderNav from "./HeaderNav/HeaderNav";
 import HeaderAccount from "./HeaderAccount/HeaderAccount";
 import Search from "../Search/Search";
@@ -7,9 +6,12 @@ import HeaderLinks from "./HeaderLinks/HeaderLinks";
 import HeaderHumburger from "./HeaderHumburger/HeaderHumburger";
 import HeaderMobileMenu from "./HeaderMobileMenu/HeaderMobileMenu";
 
-const Header: React.FC = (): JSX.Element => {
+interface IHeaderProps {
+  isMobileMenuVisible: boolean;
+  setMobileMenuVisibility: (a: boolean) => void;
+}
 
-  const [isActive, setIsActive] = useState(false);
+const Header: React.FC<IHeaderProps> = ({setMobileMenuVisibility, isMobileMenuVisible}): JSX.Element => {
 
   return (
 
@@ -17,7 +19,7 @@ const Header: React.FC = (): JSX.Element => {
 
       <header className="header">
 
-        <HeaderMobileMenu isActive={isActive} setIsActive={setIsActive} />
+        <HeaderMobileMenu isMobileMenuVisible={isMobileMenuVisible} />
         
         {/* Верхняя часть */}
         <div className="header__section header__section_bgblack">
@@ -32,7 +34,7 @@ const Header: React.FC = (): JSX.Element => {
 
                 <HeaderAccount />
 
-                <HeaderHumburger isActive={isActive} setIsActive={setIsActive} />
+                <HeaderHumburger isMobileMenuVisible={isMobileMenuVisible} setMobileMenuVisibility={setMobileMenuVisibility} />
 
             </div>
           </div>
